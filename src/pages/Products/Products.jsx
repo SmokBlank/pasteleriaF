@@ -14,42 +14,42 @@ const Products = () => {
       name: 'Pastel de Chocolate',
       description: 'Delicioso pastel de chocolate con cobertura de ganache',
       price: 150,
-      image: '/public/images/chocolate.jpg'
+      image: '/images/chocolate.jpg'
     },
     {
       id: 2,
       name: 'Pastel de Fresa',
       description: 'Suave pastel de vainilla con fresas frescas y crema',
       price: 130,
-      image: '/public/images/fresa.jpeg'
+      image: '/images/fresa.jpeg'
     },
     {
       id: 3,
       name: 'Pastel de Zanahoria',
       description: 'Húmedo pastel de zanahoria con nueces y frosting de queso crema',
       price: 80,
-      image: '/public/images/zanahaoria.jpg'
+      image: '/images/zanahaoria.jpg'
     },
     {
       id: 4,
       name: 'Red Velvet',
       description: 'Clásico pastel red velvet con frosting de queso crema',
       price: 200,
-      image: '/public/images/red.jpg'
+      image: '/images/red.jpg'
     },
     {
       id: 5,
       name: 'Tres Leches',
       description: 'Tradicional pastel tres leches con toque de canela',
       price: 160,
-      image: '/public/images/leche.jpg'
+      image: '/images/leche.jpg'
     },
     {
       id: 6,
       name: 'Cheesecake de Frutos Rojos',
       description: 'Cremoso cheesecake con salsa de frutos rojos',
       price: 50,
-      image: '/public/images/frutos.jpg'
+      image: '/images/frutos.jpg'
     }
   ];
 
@@ -85,6 +85,10 @@ const Products = () => {
     setCartItems(prevItems => prevItems.filter(item => item.id !== productId));
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   return (
     <div className="products-page">
       <div className="products-header">
@@ -114,6 +118,7 @@ const Products = () => {
         cartItems={cartItems}
         onUpdateQuantity={updateQuantity}
         onRemoveItem={removeFromCart}
+        onClearCart={clearCart}
       />
     </div>
   );
